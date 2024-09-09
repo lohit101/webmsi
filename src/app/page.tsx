@@ -41,20 +41,23 @@ export default function Home() {
     }
   }
 
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 100) {
-      animateNavbar(true);
-    } else {
-      animateNavbar(false);
-    }
-  });
+  if (typeof window !== "undefined") {
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 100) {
+        animateNavbar(true);
+      } else {
+        animateNavbar(false);
+      }
+    });
+  }
+
 
   const Icons = {
     logo: (props: IconProps) => (
       <img src={logo.src} alt="Logo" className="min-w-5 invert drop-shadow-md" />
     ),
     email: (props: IconProps) => (
-      <a href="mailto:#" className="min-w-5">
+      <a href="mailto:info@webmsi.com" className="min-w-5">
         <img className="min-w-5" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAGQAAABkCAYAAABw4pVUAAAACXBIWXMAAAsTAAALEwEAmpwYAAADLklEQVR4nO2bPWsVQRSGHw1+IREUCxULBW1sbLRQLLTRSitLO0sLUQv/QiJoZUrBIjZiERQLA2IqmwhicxuL2wgRBL8ISlAzcmUEuRB3Z3dm58zmfeBA4H7tfZ+b3TNnd0EIIYQQQgghhBBCCCGEEEIIIYQQTTkAvAWcijYZDIHDRGIP8EZCaCpjAOwnMjuBl5JCqIxXwG4SsR2YlxTqylgAdrQJ/FSN52wF5iSFKhlzPqtWmT8EZoCNFW8yAdyTFNaS8QDYVJHhBuCOz/y/QkLe8LakMC4j9AddS8iongDbqOampPA3s6kaeW0BHv2TWW0hIQelK8CvdSxmFbjRsCkKEhLStl0CfhgIx3VcP4HLLZYNwUJCFjbnge8GQnId1QpwseXCupGQkKX/aeCrgbBc4loGztbI42DF6KmxkFG9B47W2IjjwAcDoblE9RE4WSOHI8C7ivdqJWRUnyJuTIm1FPlH2VpIyL9r3ybFwwS77ShCYh3QSqpBzcbmQmBjE01IjJavlFpM2PpHFdJ2UVRCLSReHEcX0mZsYL0edzA+SibE9WxSPNvRgDWpkL5Mimc6/GElF1L6pHiq411vJ0JKnBSvZmpOOhOSul10EStn+96pkBImxSuZF7idC7E8KV42MALKIiRkKHeso0lxzIltkUIsTYqXDJ1GyCrEwm5iCBwytPvMLiTngXRgsMEwISRHq7lotAU3IyR0Mfasxee8MLxINSUkZFyxueG4oouJbe+EpBrozRYw6DQrxEUO8G4hpwJMC3EBl/FfXaMT+uYfK+W2CvNCHPAcmKwR6j7gOnDf1zVgb43XTfrPyP09ixHiAtrUUKxdcFGMEJfgZkmLlyQVJcRFvJ3Y6kV7xQlxfsB3roWMM36gmPt79EaI8yvoaX8MqMsu4JaRU8S9E+J8ffFiTvh1xDgT/rFp/9zc29t7IW7s/Mpr4Kmv0d+fDWzXuhXielASQn4JEkL+4CWE/GFLCPkDlhDyhyoh5A9SQsgfnoSQPzAJIX9IEmIgGCch+cNwBkqjE/JLkBDyBy8h5A9bQuiZECGEEEIIIYQQQgghhBBCCCGEEELwh9+EWqmXUvK87AAAAABJRU5ErkJggg==" />
       </a>
     ),
